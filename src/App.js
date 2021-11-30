@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import ButtonAppBar from './components/appBar';
+import "./App.css";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import ButtonAppBar from "./components/AppBar/appBar";
+import FetchData from "./components/Fetch/FetchData";
+import HomePage from "./components/Home/HomePage";
 
 function App() {
   return (
     <div className="App">
-    <ButtonAppBar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ButtonAppBar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element= {<HomePage/>}/>
+          <Route path="/weather" element={<FetchData/>}/> 
+
+
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
