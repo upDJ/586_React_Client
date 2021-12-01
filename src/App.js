@@ -7,13 +7,12 @@ import HomePage from "./components/Home/HomePage";
 function App() {
   return (
     <div className="App">
-      <ButtonAppBar />
+      
       <BrowserRouter>
+      <ButtonAppBar />
         <Routes>
           <Route path="/" element= {<HomePage/>}/>
           <Route path="/weather" element={<FetchData/>}/> 
-
-
         </Routes>
       </BrowserRouter>
     </div>
